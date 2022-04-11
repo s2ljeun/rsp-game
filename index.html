@@ -1,0 +1,27 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="answer">
+            ❓
+        </div>
+        <div>
+            <button>가위</button>
+            <button>바위</button>
+            <button>보</button>
+        </div>
+        <script>
+            const answer = document.querySelector("#answer");
+
+            const randomHand = ["✊","✌","🖐"];
+            const num = Math.round(Math.random() * 2);
+            console.log(num);
+
+            // setInterval(makeAnswer, 5000);
+
+            function makeAnswer(){
+                console.log(answer);
+            };
+        </script>
+    </body>
+</html>
