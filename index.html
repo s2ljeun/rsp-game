@@ -6,12 +6,15 @@
             🖐
         </div>
         <div>
-            <button>가위</button>
-            <button>바위</button>
-            <button>보</button>
+            <button id="scissors">✌</button>
+            <button id="rock">✊</button>
+            <button id="paper">🖐</button>
         </div>
         <script>
             const answer = document.querySelector("#answer");
+            const scissors = document.querySelector("#scissors");
+            const rock = document.querySelector("#rock");
+            const paper = document.querySelector("#paper");
 
             const hands = ["✌","✊","🖐"];
             let num = 0;
@@ -27,8 +30,16 @@
                 }
             };
 
-            setInterval(paintHand, 500);
+            const myInterval = setInterval(paintHand, 500);
 
+            function selectAnswer(event){
+                const userAnswer = event.target.innerText;
+                const autoAnswer = answer.innerHTML + "meow"
+                console.log(`user ${userAnswer} vs auto ${autoAnswer}`);
+                clearInterval(myInterval);
+            }
+
+            scissors.addEventListener("mousedown",selectAnswer);
         </script>
     </body>
 </html>
