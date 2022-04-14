@@ -3,7 +3,7 @@
     </head>
     <body>
         <div id="answer">
-            ✌
+            🖐
         </div>
         <div>
             <button>가위</button>
@@ -14,19 +14,21 @@
             const answer = document.querySelector("#answer");
 
             const hands = ["✌","✊","🖐"];
+            let num = 0;
 
             function paintHand(){
-                console.log("meow");
+                if(num < 2){
+                    answer.innerHTML = hands[num];
+                    num++;
+                }
+                else{
+                    answer.innerHTML = hands[num];
+                    num = 0;
+                }
             };
 
-            setInterval(paintHand, 2000);
+            setInterval(paintHand, 500);
 
-            function makeAnswer(){
-                let num = Math.floor(Math.random() * 2.49);
-                console.log(hands[num]);
-            };
-
-            // setInterval(makeAnswer, 1000);
         </script>
     </body>
 </html>
