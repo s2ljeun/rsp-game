@@ -2,8 +2,8 @@
     <head>
     </head>
     <body>
-        <div id="answer">
-            🖐
+        <div id="display">
+            
         </div>
         <div>
             <button id="scissors">✌</button>
@@ -11,35 +11,52 @@
             <button id="paper">🖐</button>
         </div>
         <script>
-            const answer = document.querySelector("#answer");
+            const display = document.querySelector("#display");
             const scissors = document.querySelector("#scissors");
             const rock = document.querySelector("#rock");
             const paper = document.querySelector("#paper");
 
             const hands = ["✌","✊","🖐"];
             let num = 0;
+            
+            scissors.addEventListener("mousedown",selectAnswer);
+            rock.addEventListener("mousedown",selectAnswer);
+            paper.addEventListener("mousedown",selectAnswer);
 
             function paintHand(){
                 if(num < 2){
-                    answer.innerHTML = hands[num];
+                    display.innerHTML = hands[num];
                     num++;
                 }
                 else{
-                    answer.innerHTML = hands[num];
+                    display.innerHTML = hands[num];
                     num = 0;
                 }
-            };
-
-            const myInterval = setInterval(paintHand, 500);
+            }
 
             function selectAnswer(event){
-                const userAnswer = event.target.innerText;
-                const autoAnswer = answer.innerHTML + "meow"
-                console.log(`user ${userAnswer} vs auto ${autoAnswer}`);
+                const userAnswer = hands.indexOf(event.target.innerText);
+                const autoAnswer = hands.indexOf(display.innerHTML);
+                const result = userAnswer - autoAnswer;
+
+                if(result == -2 || result == 1){
+                    console.log(userAnswer - autoAnswer);
+                    console.log("You Win!!!");
+                }
+                else if(result == -1 || result == 2){
+                    console.log(userAnswer - autoAnswer);
+                    console.log("You Lose!!!");
+                }
+                else if(result == 0){
+                    console.log(userAnswer - autoAnswer);
+                    console.log("DRAW...");
+                }
+
                 clearInterval(myInterval);
             }
 
-            scissors.addEventListener("mousedown",selectAnswer);
+            paintHand();
+            const myInterval = setInterval(paintHand, 500);
         </script>
     </body>
 </html>
