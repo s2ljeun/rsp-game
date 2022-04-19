@@ -1,10 +1,14 @@
     const body = document.querySelector("body");
     const display = document.querySelector("#display");
-    const wrap = document.querySelector("#wrap");
+    const resultDisplay = document.querySelector("#result-display");
+
     const userBtn = document.querySelectorAll(".user-btn");
     const scissors = document.querySelector("#scissors");
     const rock = document.querySelector("#rock");
     const paper = document.querySelector("#paper");
+
+    const retryBtn = document.querySelector("#retry-btn");
+    retryBtn.addEventListener("mousedown", retry);
 
     const hands = ["✌","✊","🖐"];
     let num = 0;
@@ -30,17 +34,18 @@
         const result = userAnswer - autoAnswer;
 
         if(result == -2 || result == 1){
-            wrap.append("You Win!!!");
+            resultDisplay.append("You Win!!!");
         }
         else if(result == -1 || result == 2){
-            wrap.append("You Lose!!!");
+            resultDisplay.append("You Lose!!!");
         }
         else if(result == 0){
-            wrap.append("DRAW...");
+            resultDisplay.append("DRAW...");
         }
 
         clearInterval(myInterval);
         disableBtn();
+        retryBtn.hidden = false;
     }
 
     function disableBtn(){
@@ -50,9 +55,13 @@
     }
 
     function retry(){
-
-    };
+        for (let i = 0; i < userBtn.length; i++) {
+            userBtn[i].disabled = false;
+            resultDisplay.innerHTML = "";
+            retryBtn.hidden = true;
+        }
+    }
 
     paintHand();
 
-    const myInterval = setInterval(paintHand, 500);
+    let myInterval = setInterval(paintHand, 500);

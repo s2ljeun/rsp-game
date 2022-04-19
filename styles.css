@@ -49,3 +49,7 @@ body{
     font-size: 5vh;
     background: transparent;
 }
+
+#result-display{
+    font-size: 4vh;
+}
