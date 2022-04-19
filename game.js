@@ -1,5 +1,6 @@
     const body = document.querySelector("body");
     const display = document.querySelector("#display");
+    const wrap = document.querySelector("#wrap");
     const scissors = document.querySelector("#scissors");
     const rock = document.querySelector("#rock");
     const paper = document.querySelector("#paper");
@@ -28,13 +29,13 @@
         const result = userAnswer - autoAnswer;
 
         if(result == -2 || result == 1){
-            body.append("You Win!!!");
+            wrap.append("You Win!!!");
         }
         else if(result == -1 || result == 2){
-            body.append("You Lose!!!");
+            wrap.append("You Lose!!!");
         }
         else if(result == 0){
-            body.append("DRAW...");
+            wrap.append("DRAW...");
         }
 
         clearInterval(myInterval);
