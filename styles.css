@@ -13,7 +13,6 @@
 
 body{
     font-family: 'DOSMyungjo';
-    text-align: center;
     background-color:antiquewhite;
 }
 
@@ -28,21 +27,24 @@ body{
     background-color:gold;
 }
 
+#wrap h1{
+    font-size: 7vh;
+    padding: 0 1vh;
+    margin-bottom: 1vh;
+}
+
 #display{
-    width: 100%;
-    display: inline-block;
-    height: auto;
     font-size: 10vh;
-    padding: 0;
+    margin: 2vh 0;
 }
 
 .user-buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 2vh 0 3vh;
 }
 
 .user-buttons button{
     cursor: pointer;
     border: 0;
+    font-size: 5vh;
+    background: transparent;
 }
