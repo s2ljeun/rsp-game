@@ -35,9 +35,11 @@
 
         if(result == -2 || result == 1){
             resultDisplay.append("You Win!!!");
+            resultDisplay.style.color = "blue";
         }
         else if(result == -1 || result == 2){
             resultDisplay.append("You Lose!!!");
+            resultDisplay.style.color = "red";
         }
         else if(result == 0){
             resultDisplay.append("DRAW...");
@@ -58,7 +60,8 @@
         for (let i = 0; i < userBtn.length; i++) {
             userBtn[i].disabled = false;
             resultDisplay.innerHTML = "";
-            }
+            };
+            resultDisplay.style.color = "";
             retryBtn.hidden = true;
             myInterval = setInterval(paintHand, 500);
     }
