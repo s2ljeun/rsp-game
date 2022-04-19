@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 @font-face {
@@ -17,16 +18,31 @@ body{
 }
 
 #wrap{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 250px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    max-width: 50vh;
     background-color:gold;
 }
 
 #display{
-    margin: auto;
-    max-width: 10vh;
+    width: 100%;
+    display: inline-block;
+    height: auto;
     font-size: 10vh;
+    padding: 0;
+}
+
+.user-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-buttons button{
+    cursor: pointer;
+    border: 0;
 }
