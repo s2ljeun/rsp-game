@@ -1,7 +1,7 @@
     const body = document.querySelector("body");
     const display = document.querySelector("#display");
     const wrap = document.querySelector("#wrap");
-    const userBtn = document.querySelectorAll(".user-buttons");
+    const userBtn = document.querySelectorAll(".user-btn");
     const scissors = document.querySelector("#scissors");
     const rock = document.querySelector("#rock");
     const paper = document.querySelector("#paper");
@@ -44,8 +44,9 @@
     }
 
     function disableBtn(){
-        console.log(userBtn)
-        // userBtn.disabled = true;
+        for (let i = 0; i < userBtn.length; i++) {
+            userBtn[i].disabled = true;
+        }
     }
 
     function retry(){
