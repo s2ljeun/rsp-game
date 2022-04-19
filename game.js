@@ -1,6 +1,7 @@
     const body = document.querySelector("body");
     const display = document.querySelector("#display");
     const wrap = document.querySelector("#wrap");
+    const userBtn = document.querySelectorAll(".user-buttons");
     const scissors = document.querySelector("#scissors");
     const rock = document.querySelector("#rock");
     const paper = document.querySelector("#paper");
@@ -39,7 +40,17 @@
         }
 
         clearInterval(myInterval);
+        disableBtn();
     }
+
+    function disableBtn(){
+        console.log(userBtn)
+        // userBtn.disabled = true;
+    }
+
+    function retry(){
+
+    };
 
     paintHand();
 

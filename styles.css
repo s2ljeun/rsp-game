@@ -27,10 +27,11 @@ body{
     background-color:gold;
 }
 
-#wrap h1{
-    font-size: 7vh;
+#wrap h1{   
+    font-size: 5vh;
     padding: 0 1vh;
     margin-bottom: 1vh;
+    writing-mode: tb-rl;
 }
 
 #display{
@@ -38,11 +39,11 @@ body{
     margin: 2vh 0;
 }
 
-.user-buttons{
+.btn-wrap{
     margin: 2vh 0 3vh;
 }
 
-.user-buttons button{
+.btn-wrap button{
     cursor: pointer;
     border: 0;
     font-size: 5vh;
