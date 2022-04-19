@@ -58,8 +58,9 @@
         for (let i = 0; i < userBtn.length; i++) {
             userBtn[i].disabled = false;
             resultDisplay.innerHTML = "";
+            }
             retryBtn.hidden = true;
-        }
+            myInterval = setInterval(paintHand, 500);
     }
 
     paintHand();
